@@ -4,33 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JMeet - Smart Meetings</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e3f2fd; /* Light blue background */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .box h1 {
+      font-size: 28px;
+      color: #0d47a1;
+      margin-bottom: 15px;
+    }
+
+    .box p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .box input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .box button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .box button:hover {
+      background-color: #1565c0;
+    }
+
+    .box footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body>
+  <div class="box">
+    <h1>Welcome to JMeet</h1>
+    <p>Launch instant video meetings with a single click.<br>
+    Fast, secure, and built for everyone.</p>
 
-  <!-- Main Content -->
-  <section class="flex flex-col md:flex-row justify-center items-center text-center md:text-left px-6 py-12 space-y-6 md:space-y-0 md:space-x-10">
-    
-    <!-- Text Block -->
-    <div class="max-w-lg">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Smart Video Meetings for Everyone</h1>
-      <p class="text-gray-300 mb-6">Connect, collaborate, and celebrate from anywhere with JMeet. Start a secure video meeting instantly with one click.</p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-        <a href="https://meet.jit.si/MutualGraspsCraftCurrently" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow transition">Start Meeting</a>
-        <input type="text" placeholder="Enter meeting code" class="py-3 px-4 rounded-md text-black w-full sm:w-64" />
-      </div>
-    </div>
+    <!-- Editable input box with placeholder -->
+    <input
+      type="text"
+      id="meetingLink"
+      placeholder="Enter meeting code"
+    />
+    <br />
 
-    <!-- Responsive Local Image with Link -->
-   
+    <!-- Start Meeting button -->
+    <button onclick="redirectToMeeting()">Start Meeting</button>
 
-  </section>
+    <footer>© Chahat 2025 JMeet. All rights reserved.</footer>
+  </div>
 
-  <!-- Footer -->
-  <footer class="text-center text-gray-500 py-6">
-    &copy; Chahat 2025 JMeet. All rights reserved.
-  </footer>
-
+  <script>
+    function redirectToMeeting() {
+      const code = document.getElementById("meetingLink").value.trim();
+      if (code) {
+        const url = https://meet.jit.si/${code};
+        window.location.href = url;
+      } else {
+        alert("Please enter a meeting code.");
+      }
+    }
+  </script>
 </body>
 </html>
