@@ -85,21 +85,17 @@
     <br />
 
     <!-- Start Meeting button -->
-    <button onclick="redirectToMeeting()">Start Meeting</button>
+    
+
+
+<script>
+  function redirectToMeeting() {
+    window.location.href = "https://meet.jit.si/MutualGrasspy";
+  }
+</script>
+<button onclick="redirectToMeeting()">Start Meeting</button>
 
     <footer>© Chahat 2025 JMeet. All rights reserved.</footer>
   </div>
-
-  <script>
-    function redirectToMeeting() {
-      const code = document.getElementById("meetingLink").value.trim();
-      if (code) {
-        const url = https://meet.jit.si/${code};
-        window.location.href = url;
-      } else {
-        alert("Please enter a meeting code.");
-      }
-    }
-  </script>
 </body>
 </html>
